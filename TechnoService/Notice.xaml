@@ -1,0 +1,40 @@
+﻿<Window x:Class="TechnoService.Notice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechnoService"
+        mc:Ignorable="d"
+        Title="Notice" Height="250" Width="700" Background="#85BDE0">
+    <Grid Margin="20 0 20 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <TextBlock Text="Уведомления" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="2" Margin="0">
+                <Button x:Name="CloseButton" Content="+" Click="CloseClick" IsEnabled="True" Foreground="#000" FontSize="50" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" RenderTransformOrigin="0.5,0.5" Height="71" VerticalAlignment="Center" Margin="6,0,-6,0">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-45"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Text="Статус заявки изменен на «В процессе ремонта»" FontSize="20" Margin="0 20 0 0"/>
+        </Grid>
+    </Grid>
+</Window>

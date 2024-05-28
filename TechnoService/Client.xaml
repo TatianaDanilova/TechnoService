@@ -1,0 +1,54 @@
+﻿<Window x:Class="TechnoService.Client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechnoService"
+        mc:Ignorable="d"
+        Title="Client" Height="450" Width="800" Background="#85BDE0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="295*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="20 0">
+                <Button x:Name="AddRequestButton" Click="AddClick" IsEnabled="True" Content="+" Height="50" Width="50" Foreground="#000" FontWeight="Bold" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Left" BorderBrush="#C34640" Background="#C34640" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Text="Заявки" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="3" Margin="20 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="NoticeButton" Content="Уведомления" Click="NoticeClick" IsEnabled="True" Height="50" Width="100" Foreground="#000" FontSize="13" HorizontalContentAlignment="Center" HorizontalAlignment="Left" BorderBrush="#C34640" Background="#C34640"/>
+                    <Label/>
+                    <Button x:Name="ProfileButton" Content="Профиль" Click="ProfileClick" IsEnabled="True" Height="50" Width="100" Foreground="#000" FontSize="13" HorizontalContentAlignment="Center" HorizontalAlignment="Left" BorderBrush="#C34640" Background="#C34640"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20 0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Статус:  "  VerticalAlignment="Center" FontWeight="Bold" FontSize="17"/>
+                <ComboBox Name="Status" Width="250" Margin="0 10" FontSize="20" VerticalContentAlignment="Center" Background="#85BDE0" BorderThickness="1" BorderBrush="#C34640">
+                    <ComboBoxItem Content="Новая заявка"/>
+                    <ComboBoxItem Content="В процессе ремонта"/>
+                    <ComboBoxItem Content="Готов к выдаче"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" Margin="20 0 20 20">
+            <DataGrid x:Name="RequestStatus" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Тип оргтехники" Width="*"/>
+                    <DataGridTextColumn Header="Описание проблемы" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

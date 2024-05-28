@@ -1,0 +1,136 @@
+﻿<Window x:Class="TechnoService.Info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechnoService"
+        mc:Ignorable="d"
+        Title="Info" Height="500" Width="600" Background="#85BDE0">
+    <Grid>
+        <Grid Margin="20 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="125*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <TextBlock Text="Информация о заявке" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="3" Margin="20">
+                    <Button x:Name="CloseButton" Content="+" Click="CloseClick" IsEnabled="True" Foreground="#000" FontSize="50" HorizontalContentAlignment="Center" BorderThickness="0" Background="Transparent" RenderTransformOrigin="0.5,0.5" Margin="27,-18,4,-14">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-45"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock Text="Тип оргтехники" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,5,0,15">
+                        <TextBox x:Name="TypeBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBlock Text="Модель" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="0,5,0,15">
+                        <TextBox x:Name="ModelBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <TextBlock Text="Описание проблемы" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="5" Margin="0,5,0,15">
+                        <TextBox x:Name="DescriptoinBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <TextBlock Text="Исполнитель" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="7" Margin="0,5,0,15">
+                        <TextBox x:Name="MasterBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="8">
+                        <TextBlock Text="Поломанная деталь" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="9" Margin="0,5,0,15">
+                        <TextBox x:Name="DetailBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock Text="Статус" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,5,0,15">
+                        <TextBox x:Name="StatusBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBlock Text="Дата начала" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="0,5,0,15">
+                        <TextBox x:Name="StartDateBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <TextBlock Text="Дата конца" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="5" Margin="0,5,0,15">
+                        <TextBox x:Name="FinishDateBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <TextBlock Text="Заказчик" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="7" Margin="0,5,0,15">
+                        <TextBox x:Name="ClientBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                    <Grid Grid.Row="8">
+                        <TextBlock Text="Комментарий" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                    </Grid>
+                    <Grid Grid.Row="9" Margin="0,5,0,15">
+                        <TextBox x:Name="CommentBox" BorderThickness="0" Background="#D5D8E7" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
