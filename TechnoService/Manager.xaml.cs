@@ -29,5 +29,10 @@ namespace TechnoService
             Profile profile = new Profile();
             profile.Show();
         }
+
+        private void SearchClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
