@@ -35,7 +35,7 @@ namespace TechnoService
         private void RegistrationClick(object sender, RoutedEventArgs e)
         {
             Check();
-            if ((NameBox.Background == Brushes.Transparent) && (PhoneBox.Background == Brushes.Transparent))
+            if ((NameBox.Background == Brushes.GreenYellow) && (PhoneBox.Background == Brushes.GreenYellow))
             {
                 Operator oper = new Operator();
                 oper.Show();
@@ -46,7 +46,7 @@ namespace TechnoService
         public void Check()
         {
             string name = NameBox.Text.Trim();
-            string pattern = "^[a-zA-Zа-яА-Я]+$";
+            string pattern = "^[a-zA-Zа-яА-Я ]+$";
 
             if (!Regex.IsMatch(name, pattern))
             {
@@ -55,7 +55,9 @@ namespace TechnoService
             }
             else
             {
-                NameBox.Background = Brushes.Transparent;
+                NameBox.Background = Brushes.GreenYellow;
+                LoginBox.Background = Brushes.GreenYellow;
+                PasswordBox.Background = Brushes.GreenYellow;
             }
 
             string phone_number = PhoneBox.Text.Trim();
@@ -68,7 +70,9 @@ namespace TechnoService
             }
             else
             {
-                PhoneBox.Background = Brushes.Transparent;
+                PhoneBox.Background = Brushes.GreenYellow;
+                LoginBox.Background = Brushes.GreenYellow;
+                PasswordBox.Background = Brushes.GreenYellow;
             }
         }
 
