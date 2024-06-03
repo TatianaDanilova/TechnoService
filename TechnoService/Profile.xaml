@@ -74,7 +74,7 @@
             <TextBox x:Name="PassBox" BorderThickness="0" Background="#D5D8E7" />
         </Grid>
         <Grid Grid.Row="11" Margin="50,15,50,15" Height="NaN" Width="NaN">
-            <Button x:Name="ExitButton" Click="ExitClick" IsEnabled="True" Content="         Выйти         " Foreground="#000" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Center" BorderBrush="#C34640" Background="#C34640" />
+            <Button x:Name="ExitButton" Click="ExitClick" IsEnabled="True" Content="   Выйти из приложения   " Foreground="#000" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Center" BorderBrush="#C34640" Background="#C34640" />
         </Grid>
     </Grid>
 </Window>

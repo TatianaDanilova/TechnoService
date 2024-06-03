@@ -1,4 +1,5 @@
-﻿using System;
+﻿using TechnoService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace TechnoService
         public Profile()
         {
             InitializeComponent();
+            NameBox.Text = CurrentUser.fio;
+            RoleBox.Text = CurrentUser.type;
+            PhoneBox.Text = CurrentUser.phone;
+            LoginBox.Text = CurrentUser.login;
+            PassBox.Text = CurrentUser.password;
+
         }
 
         private void CloseClick(object sender, RoutedEventArgs e)

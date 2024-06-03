@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechnoService.Models;
 
 namespace TechnoService
 {
@@ -37,9 +40,33 @@ namespace TechnoService
             Check();
             if ((NameBox.Background == Brushes.GreenYellow) && (PhoneBox.Background == Brushes.GreenYellow))
             {
-                Operator oper = new Operator();
-                oper.Show();
-                this.Close();
+                string name = NameBox.Text;
+                string phone = PhoneBox.Text;
+                string login = LoginBox.Text;
+                string password = PasswordBox.Password; // Для PasswordBox используйте Password свойство
+
+                // Валидация данных (если необходимо)
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(phone) ||
+                    string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+                {
+                    MessageBox.Show("Заполните все поля.");
+                    return;
+                }
+
+                // Вызов метода для регистрации пользователя
+                try
+                {
+                    DBManager.RegisterUser(name, phone, login, password);
+                    MessageBox.Show("Регистрация успешна.");
+                    // Можно закрыть окно регистрации или очистить поля
+                    MainWindow mainWindow2 = new MainWindow();
+                    mainWindow2.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при регистрации: {ex.Message}");
+                }
             }
         }
 

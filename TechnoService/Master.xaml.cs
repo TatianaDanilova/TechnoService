@@ -29,5 +29,11 @@ namespace TechnoService
             Profile profile = new Profile();
             profile.Show();
         }
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

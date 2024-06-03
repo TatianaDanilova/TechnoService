@@ -19,7 +19,11 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
+            <Grid Grid.Column="0" Margin="20 0">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="ExitButton" Click="ExitClick" IsEnabled="True" Content="Выйти" Height="50" Width="100" Foreground="#000" FontSize="13" HorizontalContentAlignment="Center" BorderBrush="#C34640" Background="#C34640" />
+                </StackPanel>
+            </Grid>
             <Grid Grid.Column="1">
                 <TextBlock Text="Статистика" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>

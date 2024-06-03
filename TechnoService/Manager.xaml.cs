@@ -34,5 +34,11 @@ namespace TechnoService
         {
 
         }
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

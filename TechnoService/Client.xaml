@@ -19,7 +19,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="20 0">
-                <Button x:Name="AddRequestButton" Click="AddClick" IsEnabled="True" Content="+" Height="50" Width="50" Foreground="#000" FontWeight="Bold" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Left" BorderBrush="#C34640" Background="#C34640" />
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="AddRequestButton" Click="AddClick" IsEnabled="True" Content="+" Height="50" Width="50" Foreground="#000" FontWeight="Bold" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Left" BorderBrush="#C34640" Background="#C34640" />
+                    <Label/>
+                    <Button x:Name="ExitButton" Click="ExitClick" IsEnabled="True" Content="Выйти" Height="50" Width="100" Foreground="#000" FontSize="13" HorizontalContentAlignment="Center" BorderBrush="#C34640" Background="#C34640" />
+                </StackPanel>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBlock Text="Заявки" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -35,7 +39,7 @@
         <Grid Grid.Row="1" Margin="20 0">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Статус:  "  VerticalAlignment="Center" FontWeight="Bold" FontSize="17"/>
-                <ComboBox Name="Status" Width="250" Margin="0 10" FontSize="20" VerticalContentAlignment="Center" Background="#85BDE0" BorderThickness="1" BorderBrush="#C34640">
+                <ComboBox Name="Status" Width="250" Margin="0 10" FontSize="20" VerticalContentAlignment="Center" Background="#85BDE0" BorderThickness="1" BorderBrush="#C34640" SelectionChanged="Status_SelectionChanged">
                     <ComboBoxItem Content="Новая заявка"/>
                     <ComboBoxItem Content="В процессе ремонта"/>
                     <ComboBoxItem Content="Готов к выдаче"/>
@@ -43,10 +47,11 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2" Margin="20 0 20 20">
-            <DataGrid x:Name="RequestStatus" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
+            <DataGrid x:Name="RequestStatus" AutoGenerateColumns="False" MouseDoubleClick="RequestStatus_MouseDoubleClick" IsReadOnly="True" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Тип оргтехники" Width="*"/>
-                    <DataGridTextColumn Header="Описание проблемы" Width="*"/>
+                    <DataGridTextColumn Header="Номер заявки" Binding="{Binding RequestId}" Width="0.5*"/>
+                    <DataGridTextColumn Header="Тип оргтехники" Binding="{Binding TechType}" Width="*"/>
+                    <DataGridTextColumn Header="Описание проблемы" Binding="{Binding ProblemDescription}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
