@@ -15,6 +15,5 @@ namespace TechnoService.Models
         public static string login;
         public static string password;
         public static string type;
-
     }
 }

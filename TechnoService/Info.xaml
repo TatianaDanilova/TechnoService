@@ -79,7 +79,7 @@
                         <TextBox x:Name="MasterBox" BorderThickness="0" Background="#D5D8E7" />
                     </Grid>
                     <Grid Grid.Row="8">
-                        <TextBlock Text="Поломанная деталь" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
+                        <TextBlock Text="Сломанная деталь" VerticalAlignment="Bottom" FontWeight="DemiBold" FontSize="17"/>
                     </Grid>
                     <Grid Grid.Row="9" Margin="0,5,0,15">
                         <TextBox x:Name="DetailBox" BorderThickness="0" Background="#D5D8E7" />

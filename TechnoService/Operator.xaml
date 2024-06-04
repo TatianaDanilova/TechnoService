@@ -28,15 +28,29 @@
             <Grid Grid.Column="3" Margin="20 0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="ProfileButton" Content="Профиль" Click="ProfileClick" IsEnabled="True" Height="50" Width="100" Foreground="#000" FontSize="13" HorizontalContentAlignment="Center" HorizontalAlignment="Left" BorderBrush="#C34640" Background="#C34640"/>
+                    
                 </StackPanel>
             </Grid>
         </Grid>
         <Grid Grid.Row="2" Margin="20 0 20 20">
-            <DataGrid x:Name="RequestMaster" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
+            <DataGrid x:Name="RequestMasterGrid" MouseDoubleClick="RequestStatus_MouseDoubleClick" AutoGenerateColumns="False" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Тип оргтехники" Width="*"/>
-                    <DataGridTextColumn Header="Описание проблемы" Width="*"/>
-                    <DataGridComboBoxColumn Header="Исполнитель" Width="*"/>
+                    <DataGridTextColumn Header="№" Binding="{Binding RequestId}"  Width="0.2*"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding TechType}"  Width="0.8*"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding ProblemDescription}" Width="*"/>
+                    <DataGridComboBoxColumn Header="Исполнитель" SelectedValueBinding="{Binding MasterId}" DisplayMemberPath="FIO" SelectedValuePath="UserId" Width="*">
+                        <DataGridComboBoxColumn.ElementStyle>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="ItemsSource" Value="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext.Masters}" />
+                                <EventSetter Event="SelectionChanged" Handler="ComboBox_SelectionChanged" />
+                            </Style>
+                        </DataGridComboBoxColumn.ElementStyle>
+                        <DataGridComboBoxColumn.EditingElementStyle>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="ItemsSource" Value="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext.Masters}" />
+                            </Style>
+                        </DataGridComboBoxColumn.EditingElementStyle>
+                    </DataGridComboBoxColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

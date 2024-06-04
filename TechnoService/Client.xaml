@@ -47,7 +47,7 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2" Margin="20 0 20 20">
-            <DataGrid x:Name="RequestStatus" AutoGenerateColumns="False" MouseDoubleClick="RequestStatus_MouseDoubleClick" IsReadOnly="True" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
+            <DataGrid x:Name="RequestStatus" AutoGenerateColumns="False" MouseDoubleClick="RequestStatus_MouseDoubleClick" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Номер заявки" Binding="{Binding RequestId}" Width="0.5*"/>
                     <DataGridTextColumn Header="Тип оргтехники" Binding="{Binding TechType}" Width="*"/>

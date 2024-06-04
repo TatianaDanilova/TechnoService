@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechnoService.Models;
 
 namespace TechnoService
 {
@@ -22,6 +23,8 @@ namespace TechnoService
         public Manager()
         {
             InitializeComponent();
+            CompleteRequestBox.Text = DBManager.GetNumberOfDoneRequests().ToString();
+            AverageTimeBox.Text = DBManager.GetAverageTime().ToString();
         }
 
         private void ProfileClick(object sender, RoutedEventArgs e)
@@ -32,7 +35,9 @@ namespace TechnoService
 
         private void SearchClick(object sender, RoutedEventArgs e)
         {
-
+            string type = TypeBox.Text;
+            RequestBox.Text = DBManager.GetNumberOfDoneRequestsByType(type).ToString();
+            AverageBox.Text = DBManager.GetMidTimeOfDoneRequestsByType(type).ToString();
         }
         private void ExitClick(object sender, RoutedEventArgs e)
         {

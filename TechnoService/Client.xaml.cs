@@ -35,6 +35,8 @@ namespace TechnoService
 
         private void NoticeClick(object sender, RoutedEventArgs e)
         {
+            Notification notification = new Notification();
+            MessageBox.Show($"NotificationID: {notification.NotificationId} Message: {notification.Message}");
             Notice notice = new Notice();
             notice.Show();
         }

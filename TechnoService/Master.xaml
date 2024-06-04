@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TechnoService"
+        xmlns:local="clr-namespace:TechnoService" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Master" Height="450" Width="800" Background="#85BDE0">
     <Grid>
@@ -32,12 +32,14 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2" Margin="20 0 20 20">
-            <DataGrid x:Name="RequestStatusMaster" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Тип оргтехники" Width="*"/>
-                    <DataGridTextColumn Header="Описание проблемы" Width="*"/>
-                    <DataGridComboBoxColumn Header="Статус" Width="*"/>
-                </DataGrid.Columns>
+            <DataGrid x:Name="RequestStatusMaster" MouseDoubleClick="RequestStatusMaster_MouseDoubleClick" AutoGenerateColumns="False" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640"  CellEditEnding="RequestStatusMaster_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Binding="{Binding RequestId}"  Width="0.2*"/>
+                        <DataGridTextColumn Header="Тип" Binding="{Binding TechType}"  Width="0.7*"/>
+                    <DataGridTextColumn Header="Комментарий" Binding="{Binding Comment.Message}"  Width="0.8*"/>
+                    <DataGridTextColumn Header="Сломанная деталь" Binding="{Binding RepairPart}"  Width="*"/>
+                        <DataGridTextColumn Header="Статус" Binding="{Binding Status}"  Width="*"/>
+                    </DataGrid.Columns>
             </DataGrid>
         </Grid>
     </Grid>

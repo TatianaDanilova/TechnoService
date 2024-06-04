@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechnoService.Models
 {
-    internal class CurrentRequest
+    public class CurrentRequest
     {
         public static int requestId;
         public static string startDate;

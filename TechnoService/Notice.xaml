@@ -34,7 +34,12 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock Text="Статус заявки изменен на «В процессе ремонта»" FontSize="20" Margin="0 20 0 0"/>
+            <DataGrid x:Name="NoticeList" AutoGenerateColumns="False" FontSize="20" BorderThickness="1.5" Background="#85BDE0" BorderBrush="#C34640">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Уведомление" Binding="{Binding Message}" Width="*"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding NotificationDate}" Width="0.3*"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </Window>

@@ -19,6 +19,8 @@ namespace TechnoService.Models
         public int? MasterId { get; set; }
         public int ClientId { get; set; }
         public DateTime StatusChangeDate { get; set; }
+        public string Message { get; set; }
+        public Comment Comment { get; set; }
 
         public User Master { get; set; }
         public User Client { get; set; }

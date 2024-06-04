@@ -12,7 +12,7 @@ namespace TechnoService.Models
     public class Helper
     {
         private const string DatabaseName = "TechnoService.db";
-        private const int CurrentDatabaseVersion = 3; // Установите текущую версию базы данных
+        private const int CurrentDatabaseVersion = 9; // Установите текущую версию базы данных
 
         public Helper()
         {
@@ -105,8 +105,18 @@ namespace TechnoService.Models
                         RequestId INTEGER NOT NULL,
                         FOREIGN KEY (RequestId) REFERENCES Requests(RequestId),
                         FOREIGN KEY (MasterId) REFERENCES Users(UserId)
-                    );"
-                ;
+                    );";
+
+                string createNotificationsTableQuery = @"
+                        CREATE TABLE Notifications (
+                        NotificationId INTEGER PRIMARY KEY AUTOINCREMENT,
+                        Message NCHAR(50) NOT NULL,
+                        Date DATE DEFAULT CURRENT_DATE,
+                        ClientId INTEGER NOT NULL,
+                        FOREIGN KEY (ClientId) REFERENCES Users(UserId)
+                    );";
+
+
 
                 using (var command = new SQLiteCommand(createUsersTable, connection))
                 {
@@ -119,6 +129,10 @@ namespace TechnoService.Models
                 }
 
                 using (var command = new SQLiteCommand(createCommentsTable, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                using (var command = new SQLiteCommand(createNotificationsTableQuery, connection))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -162,6 +176,9 @@ namespace TechnoService.Models
                     ('Интересная проблема', 2, 1),
                     ('Очень странно, будем разбираться!', 3, 6);"
                 ;
+                string insertNotice = @"
+                    INSERT INTO Notifications (ClientId, Message, Date) VALUES 
+(7, 'Заявке №1 назначен специалист', '2023-06-06');";
 
                 using (var command = new SQLiteCommand(insertUsers, connection))
                 {
@@ -174,6 +191,10 @@ namespace TechnoService.Models
                 }
 
                 using (var command = new SQLiteCommand(insertComments, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                using (var command = new SQLiteCommand(insertNotice, connection))
                 {
                     command.ExecuteNonQuery();
                 }

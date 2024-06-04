@@ -47,10 +47,10 @@
                 <TextBlock Text="Среднее время выполнения заявки (в днях):" TextWrapping="Wrap" FontSize="25" FontWeight="DemiBold"/>
             </Grid>
             <Grid Grid.Row="0" Grid.Column="1">
-                <TextBox x:Name="CompleteRequestBox" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
+                <TextBox x:Name="CompleteRequestBox" FontSize="25" HorizontalContentAlignment="Center" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
             </Grid>
             <Grid Grid.Row="1" Grid.Column="1">
-                <TextBox x:Name="AverageTimeBox" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
+                <TextBox x:Name="AverageTimeBox" FontSize="25" HorizontalContentAlignment="Center" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
             </Grid>
         </Grid>
 
@@ -96,10 +96,10 @@
                 <TextBlock Text="Среднее время выполнения заявки (в днях):" TextWrapping="Wrap" FontSize="25" FontWeight="DemiBold"/>
             </Grid>
             <Grid Grid.Row="0" Grid.Column="1">
-                <TextBox x:Name="RequestBox" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
+                <TextBox x:Name="RequestBox" FontSize="25" HorizontalContentAlignment="Center" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
             </Grid>
             <Grid Grid.Row="1" Grid.Column="1">
-                <TextBox x:Name="AverageBox" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
+                <TextBox x:Name="AverageBox" FontSize="25" HorizontalContentAlignment="Center" Margin="10 5 100 5" BorderThickness="0" Background="#D5D8E7" />
             </Grid>
         </Grid>
     </Grid>
